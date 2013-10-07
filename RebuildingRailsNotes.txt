@@ -1,0 +1,9 @@
+Chatper 3
+Starting from chatper 3 you switch to directing readers to use the github, but in chapter 2 you explain to make all the changes, such as incrementing the version file (and talk about incrementing it each chapter).
+
+Page 40, para 2 "bit harder to redirect that a normal redirect" => "than than a normal redirect"
+para 3 "number bare" => "bare numbers"
+
+Page 45 Needed to reinstall rulers before I could "rackup -p 3001", but couldn't get "bundle exec rackup -p 3001".  You need to specifiy if you're showing the entire file or just a snippit.
+
+Page 49 you need to do a 'bundle install' before running 'bundle exec rerun -- rackup -p 3001', also on 10.9/ruby 2 I get ".rvm/gems/ruby-2.0.0-p247/gems/rerun-0.8.1/lib/rerun/watcher.rb:62:in `block in start': undefined method `start!' for #<Listen::Listener:0x007f89b42e0f28> (NoMethodError)".  Listen version 2 removes start! which rerun relies on listen 1.3.1 and hasn't been updated for listen 2.0.0.
