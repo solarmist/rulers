@@ -1,9 +1,11 @@
 # rulers/lib/rulers.rb
-require "rulers/version"
-require "rulers/routing"
+
 require "rulers/array"
-require "rulers/util"
+require "rulers/controller"
 require "rulers/dependencies"
+require "rulers/routing"
+require "rulers/util"
+require "rulers/version"
 
 module Rulers
   class Application
@@ -20,22 +22,13 @@ module Rulers
         text = controller.send(act)
         return [200, {'Content-Type' => 'text/html'},
          [text]]
-      rescue
+      rescue StandardError => err
         return [500, {'Content-Type' => 'text/html'},
          ["Something went wrong on the page" +
-         "\n<pre>\n#{env}\n</pre>"]]
+         "\n<pre>\n#{err.inspect}\n</pre>"]]
       end
     end
   end
 
 
-  class Controller
-    def initialize(env)
-      @env = env
-    end
-
-    def env
-      @env
-    end
-  end
 end

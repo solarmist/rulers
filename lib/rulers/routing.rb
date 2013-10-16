@@ -1,4 +1,4 @@
-# rulers/lib/routing.rb
+# rulers/lib/rulers/routing.rb
 
 module Rulers
   class Application
