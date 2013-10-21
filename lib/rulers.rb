@@ -27,7 +27,7 @@ module Rulers
           st, hd, rs = controller.get_response.to_a
           [st, hd, [rs.body].flatten]
         else
-          render act, :obj => text
+          render act
           # [200, {'Content-Type' => 'text/html'}, [text]]
         end
       rescue StandardError
