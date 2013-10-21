@@ -1,6 +1,5 @@
-// best_quotes/db/quotes/1.json
 {
-    "submitter": "Hank",
-    "quote": "A penny saved is a penny earned.",
-    "attribution": "Ben Franklin"
+  "submitter": "Hank",
+  "quote": "A penny saved is a penny earned.",
+  "attribution": "Ben Franklin"
 }

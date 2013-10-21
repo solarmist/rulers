@@ -30,8 +30,15 @@ class FileModelTest < Test::Unit::TestCase
     assert data.length == 2, "#{data}"
   end
 
+  def test_file_save
+    assert FileModel.find(3)["submitter"] != "test", "Bad initial state"
+    updated = FileModel.save 3, {"submitter" => "test"}
+    assert updated["submitter"] == "test", "Submitter not updated: #{updated}"
+    updated = FileModel.save 3, {"submitter" => "Hank"}
+  end
+
   def test_file_find_by_id
-    first = FileModel.find "1"
+    first = FileModel.find 1
     assert first
     assert first.id == 1
   end

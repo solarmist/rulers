@@ -75,7 +75,7 @@ module Rulers
 
       def self.save(id, attrs)
         hash = find(id)
-        return nil unless hash
+        return "HELLO" unless hash
         ["submitter", "quote", "attribution"].each do |key|
           hash[key] = attrs[key] || hash[key] || ""
         end
