@@ -1,3 +1,14 @@
+As I've been reading this there is some mixed messages on who the target
+audience is.  For example, you use map with only a passing comment, but explain
+negative indices and what CRUD is in the next few pages, but I believe the
+target audience is people that have created couple of small or a single medium
+rails apps.  To me this reads as if it is targeting a beginner (one programming
+class in a scripting language, prefferably Ruby) with no web or professional
+expereince, but with bits here and there of assumed knowledge (like rails
+directory structures, or how to insert a variable in erb html etc).  With a bit
+of editing and expanding to clarify the target audience this book could clearly
+target a first web exposure audience.  The In Rails sections are the only ones that assume Rails experience as best I can tell (since a lot of them are over my head).
+
 Chatper 3
 Starting from chatper 3 you switch to directing readers to use the github, but
 in chapter 2 you explain to make all the changes, such as incrementing the
@@ -21,3 +32,18 @@ listen 2.0.0.
 
 Page 56 The comment at the top of the ERB file has a ruby style comment at the
 top instead of an HTML comment
+
+Page 66 you should at some point mention bundle <=> bundle install.  The quote in the json should be //
+
+Page 68 Why a bare rescue instead of FileNotFound?
+
+P 69 Comment should be HTML style also
+
+P 72 Comment should be //
+        ["submitter", "quote", "attribution"].each do |key|
+          hash[key] = attrs[key] || ""
+        end
+is a much nicer way of assigning the hash (since you're assuming a some
+facility with Ruby and using map in the next line)
+how about
+    b.gsub(".json", "").to_i instead of the slice b.[0..-5]

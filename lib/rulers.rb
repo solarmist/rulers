@@ -3,6 +3,7 @@
 require "rulers/array"
 require "rulers/controller"
 require "rulers/dependencies"
+require "rulers/file_model"
 require "rulers/routing"
 require "rulers/util"
 require "rulers/version"
@@ -22,10 +23,12 @@ module Rulers
         text = controller.send(act)
         return [200, {'Content-Type' => 'text/html'},
          [text]]
-      rescue StandardError => err
+      rescue StandardError
         return [500, {'Content-Type' => 'text/html'},
-         ["Something went wrong on the page" +
-         "\n<pre>\n#{err.inspect}\n</pre>"]]
+                ["Something went wrong on the page",
+                 "<pre>#{env}</pre>",
+                 "<pre> #{$!.message.gsub("<","").gsub(">","")}</pre>",
+                "<pre>#{$!.backtrace.join('<br>')}</pre>"]]
       end
     end
   end

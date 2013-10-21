@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 # rulers/test/test_application.rb
 require_relative "test_helper"
 
@@ -13,6 +14,26 @@ class TestApp < Rulers::Application
       raise StandardError
     end
     [TestController, "index"]
+  end
+end
+
+class FileModelTest < Test::Unit::TestCase
+  include Rulers::Model
+
+  def test_all
+    all = FileModel.all
+    assert FileModel.all.length == 3, "#{all}"
+  end
+
+  def test_file_find_by_submitter
+    data = FileModel.find "J", "submitter"
+    assert data.length == 2, "#{data}"
+  end
+
+  def test_file_find_by_id
+    first = FileModel.find "1"
+    assert first
+    assert first.id == 1
   end
 end
 
