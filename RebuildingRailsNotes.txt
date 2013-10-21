@@ -47,3 +47,7 @@ is a much nicer way of assigning the hash (since you're assuming a some
 facility with Ruby and using map in the next line)
 how about
     b.gsub(".json", "").to_i instead of the slice b.[0..-5]
+
+P 76 Exercise Two is a bit unclear in its goal, what do you want the reader to actually do?  It sounds more like a mini-discussion that mentions something you could do in the middle more than an exercise.  It should be clear when you're done with an exercise.
+
+P 85 Exercise One is unclear in it's wording and seems to leave an incomplete solution once implemented, since Rails uses class variables for passing variables, but out quotes app is just using them directly.
