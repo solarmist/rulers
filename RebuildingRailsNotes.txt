@@ -71,6 +71,10 @@ facility with Ruby and using map in the next line)
 how about
     b.gsub(".json", "").to_i instead of the slice b.[0..-5]
 
+P ..-75 It was impossible for me to finish the chapter or do these exercises
+without building a test suite for FileModel, so maybe adding some basic
+functionality tests would probably be good
+
 P 76 Exercise Two is a bit unclear in its goal, what do you want the reader to
 actually do?  It sounds more like a mini-discussion that mentions something you
 could do in the middle more than an exercise.  It should be clear when you're
