@@ -100,5 +100,22 @@ with the best quotes app, like adding password auth for adding or modifying a
 quote and benchmarking the index(all) page.  I was able to do all the
 middle-ware with the app no problem, but that's ignored by the book.
 
+P. 119 rs should be bare rather than [rs].flatten in dispatch
+
 P. 120 Building this new routing onto Rulers I feel like there a lot of cruft
 left behind, having something nice and clean at the end would be good.
+
+P. 123 RouteObject should be inside the Rulers module shouldn't it?
+
+P. 125 your method header doesn't match the one we wrote on p 123
+
+P 127 next unless m instead of the big if m block
+
+P 127  We never update Application.call to use get_rack_app in chapter 9, but
+your github code has the correct version.
+        klass, act = get_controller_and_action(env)
+        rack_app = klass.action(act)
+        rack_app.call(env)
+should be
+        rack_app = get_rack_app(env)
+        rack_app.call(env)

@@ -9,6 +9,30 @@ module Rulers
   class Controller
     include Rulers::Model
 
+    def initialize(env)
+      @env = env
+      @routing_params = {}
+    end
+
+    def dispatch(action, routing_params = {})
+      @routing_params = routing_params
+      text = self.send(action)
+      if get_response
+        st, hd, rs = get_response.to_a
+        [st, hd, rs]
+      else
+        [200, {'Content-Type' => 'text/html'}, [text].flatten]
+      end
+    end
+
+    def self.action(act, rp = {})
+      proc {|env| self.new(env).dispatch(act, rp)}
+    end
+
+    def params
+      request.params.merge @routing_params
+    end
+
     def response(text, status = 200, headers = {})
       raise "Already responded!" if @response
       a = [text].flatten
@@ -25,14 +49,6 @@ module Rulers
 
     def request
       @request ||= Rack::Request.new(@env)
-    end
-
-    def params
-      request.params
-    end
-
-    def initialize(env)
-      @env = env
     end
 
     def env
