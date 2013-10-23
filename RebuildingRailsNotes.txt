@@ -21,9 +21,9 @@ demo application, but the final product is something that feels like a
 completed web application that I could show off (even is it is much simpler in
 terms of code) just because there's a base template that has some css in it.
 
-There no way to add a quote from the browser!!!!!  I went though all that work
-and I can't install and use what I just built without a bunch of extra work!
-End with a finished product not a mostly finished product.
+You finish Rulers nicely and tie it up (if not with a bow, pretty close), but
+you don't do the same for best_quotes.  Finish it up so people can have a
+working app to show off their own micro framework .
 
 I recommend against reminding people of your github repo in every chapter. I
 think a build it yourself mentality (even if you keep your repo up for
@@ -55,7 +55,8 @@ listen 2.0.0.
 Page 56 The comment at the top of the ERB file has a ruby style comment at the
 top instead of an HTML comment
 
-Page 66 you should at some point mention bundle <=> bundle install.  The quote in the json should be //
+Page 66 you should at some point mention bundle <=> bundle install.  The quote
+in the json should be //
 
 Page 68 Why a bare rescue instead of FileNotFound?
 
