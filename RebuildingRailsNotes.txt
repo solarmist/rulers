@@ -7,7 +7,29 @@ class in a scripting language, prefferably Ruby) with no web or professional
 expereince, but with bits here and there of assumed knowledge (like rails
 directory structures, or how to insert a variable in erb html etc).  With a bit
 of editing and expanding to clarify the target audience this book could clearly
-target a first web exposure audience.  The In Rails sections are the only ones that assume Rails experience as best I can tell (since a lot of them are over my head).
+target a first web exposure audience.  The In Rails sections are the only ones
+that assume Rails experience as best I can tell (since a lot of them are over
+my head).
+
+Overall the book feels very uneven in the level between the sections, from
+trivially easy to go build this on your own (never more than a few lines, but
+exponentially more difficult than most of the book), plus the rails stuff.
+
+I'd polish the end product from the book more with some nicer templates.  The
+Flask tutorial (http://flask.pocoo.org/docs/tutorial/) builds a pretty similar
+demo application, but the final product is something that feels like a
+completed web application that I could show off (even is it is much simpler in
+terms of code) just because there's a base template that has some css in it.
+
+There no way to add a quote from the browser!!!!!  I went though all that work
+and I can't install and use what I just built without a bunch of extra work!
+End with a finished product not a mostly finished product.
+
+I recommend against reminding people of your github repo in every chapter. I
+think a build it yourself mentality (even if you keep your repo up for
+reference) is much more powerful in making this a "good" book.
+
+Appeal to people's maker instinct more.
 
 Chatper 3
 Starting from chatper 3 you switch to directing readers to use the github, but
@@ -48,8 +70,35 @@ facility with Ruby and using map in the next line)
 how about
     b.gsub(".json", "").to_i instead of the slice b.[0..-5]
 
-P 76 Exercise Two is a bit unclear in its goal, what do you want the reader to actually do?  It sounds more like a mini-discussion that mentions something you could do in the middle more than an exercise.  It should be clear when you're done with an exercise.
+P 76 Exercise Two is a bit unclear in its goal, what do you want the reader to
+actually do?  It sounds more like a mini-discussion that mentions something you
+could do in the middle more than an exercise.  It should be clear when you're
+done with an exercise.
 
-P 85 Exercise One is unclear in it's wording and seems to leave an incomplete solution once implemented, since Rails uses class variables for passing variables, but out quotes app is just using them directly.
+P 85 Exercise One is unclear in it's wording and seems to leave an incomplete
+solution once implemented, since Rails uses class variables for passing
+variables, but out quotes app is just using them directly.
 
-P 95 Your rewriting sections of the sqlite_test.rb stuff that isn't changing what it does, just the text in the first part then on P 97 you go back again.  Perhaps clean it up so it's closer to everything else where we're just building on the script instead of rewriting so much, or make it more clear that it's a rewrite each time. Personally I'd like the last version be more like a demonstration of of most of the features we just wrote.
+P 95 Your rewriting sections of the sqlite_test.rb stuff that isn't changing
+what it does, just the text in the first part then on P 97 you go back again.
+Perhaps clean it up so it's closer to everything else where we're just building
+on the script instead of rewriting so much, or make it more clear that it's a
+rewrite each time. Personally I'd like the last version be more like a
+demonstration of of most of the features we just wrote.
+
+P. 100 What is the exercise here?
+
+P. 110/111 The "longest path" thing didn't make any sense to me until I though
+about the paths as regular expressions.  I was thinking == for map matching
+until then, so rewrite it a bit would probably be good.
+
+P. 113 You don't mention that middleware order matters. That if you have
+something before Auth::Basic that something happens without authentication.
+
+Chapter 8 feels like an extra. Either put it in an appendix or integrate it
+with the best quotes app, like adding password auth for adding or modifying a
+quote and benchmarking the index(all) page.  I was able to do all the
+middle-ware with the app no problem, but that's ignored by the book.
+
+P. 120 Building this new routing onto Rulers I feel like there a lot of cruft
+left behind, having something nice and clean at the end would be good.
